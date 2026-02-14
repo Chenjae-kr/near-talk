@@ -1,0 +1,71 @@
+{
+  "expo": {
+    "name": "Near Talk",
+    "slug": "near-talk",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "neartalk",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "주변 후기를 보여드리기 위해 위치 정보가 필요합니다.",
+        "NSPhotoLibraryUsageDescription": "후기에 사진을 첨부하기 위해 사진 접근 권한이 필요합니다."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "@mj-studio/react-native-naver-map",
+        {
+          "android": {
+            "clientId": "YOUR_NAVER_CLIENT_ID"
+          },
+          "ios": {
+            "clientId": "YOUR_NAVER_CLIENT_ID"
+          }
+        }
+      ],
+      "expo-secure-store",
+      "expo-web-browser",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "주변 후기를 보여드리기 위해 위치 정보가 필요합니다."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "후기에 사진을 첨부하기 위해 사진 접근 권한이 필요합니다."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
